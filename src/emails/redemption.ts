@@ -24,7 +24,7 @@ export async function sendRedemptionEmail(data: RedemptionEmailData) {
     minute: "2-digit",
   });
 
-  const { error } = await resend.emails.send({
+  const response = await resend.emails.send({
     from: "onboarding@resend.dev",
     to: ownerEmail,
     subject: `${data.chitEmoji} Your love chit was redeemed!`,
@@ -68,7 +68,9 @@ export async function sendRedemptionEmail(data: RedemptionEmailData) {
     `,
   });
 
-  if (error) {
-    throw new Error(`Failed to send email: ${error.message}`);
-  }
+  console.log(response);
+
+  // if (error) {
+  //   throw new Error(`Failed to send email: ${error.message}`);
+  // }
 }

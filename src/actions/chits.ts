@@ -305,9 +305,9 @@ export async function redeemChit(
     chitEmoji: existing.emoji,
     chitDescription: existing.description,
     redeemedAt,
-  }).catch(() => {
+  }).catch((err) => {
     // Email failure shouldn't block redemption
-    console.log("Failed to send redemption email");
+    console.log("Failed to send redemption email: ", err);
   });
 
   return { success: true, error: null };
