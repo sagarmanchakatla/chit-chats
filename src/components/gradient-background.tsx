@@ -15,7 +15,7 @@ export function GradientBackground() {
         className="absolute bottom-[-250px] left-1/2 h-[700px] w-[700px] -translate-x-1/2 rounded-full blur-[120px]"
         style={{
           background:
-            "radial-gradient(circle, rgba(255,210,0,0.45) 0%, rgba(255,180,0,0.25) 35%, transparent 70%)",
+            "radial-gradient(circle, rgba(255,210,0,0.75) 0%, rgba(255,180,0,0.25) 55%, transparent 100%)",
         }}
         animate={
           reduceMotion
