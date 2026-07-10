@@ -7,28 +7,31 @@ import { useState, useCallback } from "react";
 
 type LoveChit = Database["public"]["Tables"]["love_chits"]["Row"];
 
-type CardSize = "regular" | "wide" | "tall";
+type CardSize = "regular" | "wide" | "tall" | "large";
 
 interface ChitCardProps {
   chit: LoveChit;
   size: CardSize;
+  gifPath?: string;
   onRedeem?: (chit: LoveChit) => void;
 }
 
 const sizeStyles: Record<CardSize, { aspect: string; colSpan: string; rowSpan: string }> = {
-  regular: { aspect: "aspect-[4/3]", colSpan: "", rowSpan: "" },
+  regular: { aspect: "aspect-square", colSpan: "", rowSpan: "" },
   wide: { aspect: "aspect-[16/9]", colSpan: "col-span-2", rowSpan: "" },
   tall: { aspect: "aspect-[3/4]", colSpan: "", rowSpan: "row-span-2" },
+  large: { aspect: "aspect-square", colSpan: "col-span-2", rowSpan: "row-span-2" },
 };
 
-export function ChitCard({ chit, size, onRedeem }: ChitCardProps) {
+export function ChitCard({ chit, size, gifPath, onRedeem }: ChitCardProps) {
   const isRedeemed = chit.redeemed;
   const shouldReduceMotion = useReducedMotion();
+  const mediaSrc = gifPath || chit.gif_url || null;
   const [imgStatus, setImgStatus] = useState<"loading" | "loaded" | "error">(
-    chit.gif_url ? "loading" : "error",
+    mediaSrc ? "loading" : "error",
   );
 
-  const hasMedia = Boolean(chit.gif_url) && imgStatus !== "error";
+  const hasMedia = Boolean(mediaSrc) && imgStatus !== "error";
 
   const handleImgLoad = useCallback(() => setImgStatus("loaded"), []);
   const handleImgError = useCallback(() => setImgStatus("error"), []);
@@ -70,9 +73,7 @@ export function ChitCard({ chit, size, onRedeem }: ChitCardProps) {
         aspect,
         colSpan,
         rowSpan,
-        isRedeemed
-          ? "cursor-default opacity-60 saturate-0"
-          : "cursor-pointer glass-card",
+        isRedeemed ? "cursor-default opacity-60 saturate-0" : "glass-card cursor-pointer",
       )}
       style={{
         boxShadow: isRedeemed ? "none" : `0 1px 3px rgba(0,0,0,0.04), 0 8px 32px ${chit.theme}12`,
@@ -93,12 +94,14 @@ export function ChitCard({ chit, size, onRedeem }: ChitCardProps) {
         <>
           {/* Shimmer loading skeleton */}
           {imgStatus === "loading" && (
-            <div className="absolute inset-0 z-10 animate-shimmer bg-gradient-to-r from-slate-200/60 via-white/40 to-slate-200/60 bg-[length:200%_100%]" />
+            <div className="animate-shimmer absolute inset-0 z-10 bg-gradient-to-r from-slate-200/60 via-white/40 to-slate-200/60 bg-[length:200%_100%]" />
           )}
           <img
-            src={chit.gif_url!}
+            key={mediaSrc}
+            src={mediaSrc!}
             alt={chit.title}
             loading="lazy"
+            decoding="async"
             onLoad={handleImgLoad}
             onError={handleImgError}
             className={cn(
@@ -115,17 +118,20 @@ export function ChitCard({ chit, size, onRedeem }: ChitCardProps) {
             background: `radial-gradient(circle at 50% 40%, ${chit.theme}30 0%, ${chit.theme}08 70%, transparent 100%)`,
           }}
         >
-          <span className="text-6xl leading-none opacity-80 sm:text-5xl" role="img" aria-label={chit.title}>
+          <span
+            className="text-6xl leading-none opacity-80 sm:text-5xl"
+            role="img"
+            aria-label={chit.title}
+          >
             {chit.emoji}
           </span>
+          {/* <img src="/" alt="" /> */}
         </div>
       )}
 
       {/* Gradient scrim + text overlay */}
-      <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/60 via-black/20 to-transparent px-4 pb-4 pt-12">
-        <h3 className="truncate text-base font-semibold leading-tight text-white">
-          {chit.title}
-        </h3>
+      <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/60 via-black/20 to-transparent px-4 pt-12 pb-4">
+        <h3 className="truncate text-base leading-tight font-semibold text-white">{chit.title}</h3>
         <p className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-white/80">
           {chit.description}
         </p>
@@ -139,7 +145,7 @@ export function ChitCard({ chit, size, onRedeem }: ChitCardProps) {
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
           className="absolute top-3 right-3 z-30"
         >
-          <div className="rounded-full bg-love-pink/85 px-3 py-1 text-[11px] font-semibold tracking-wide text-white shadow-sm">
+          <div className="bg-love-pink/85 rounded-full px-3 py-1 text-[11px] font-semibold tracking-wide text-white shadow-sm">
             Redeemed ❤️
           </div>
         </motion.div>

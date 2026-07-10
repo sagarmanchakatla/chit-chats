@@ -1,0 +1,218 @@
+{
+  "id": "default",
+  "name": "Product Showcase",
+  "cards": [
+    {
+      "id": "card-1783693473289-0",
+      "size": "large",
+      "x": 0,
+      "y": 0,
+      "backgroundImage": "https://via.placeholder.com/400x300?text=Your+Image+Here",
+      "text": "Ice-cream",
+      "textColor": "#ffffff",
+      "textAlignment": "center",
+      "verticalAlignment": "top",
+      "fontSize": 28
+    },
+    {
+      "id": "card-1783693473289-1",
+      "size": "square",
+      "x": 4,
+      "y": 0,
+      "text": "",
+      "subtitle": "",
+      "textColor": "#fbbf24",
+      "textAlignment": "center",
+      "verticalAlignment": "center",
+      "fontSize": 32,
+      "backgroundImage": "https://via.placeholder.com/400x300?text=Your+Image+Here"
+    },
+    {
+      "id": "card-1783693473289-2",
+      "size": "portrait",
+      "x": 6,
+      "y": 0,
+      "backgroundImage": "https://via.placeholder.com/400x300?text=Your+Image+Here",
+      "text": "",
+      "subtitle": "Shopping"
+    },
+    {
+      "id": "card-1783693473289-3",
+      "size": "square",
+      "x": 8,
+      "y": 0,
+      "text": "",
+      "subtitle": "",
+      "textColor": "#ffffff",
+      "textAlignment": "center",
+      "verticalAlignment": "center",
+      "fontSize": 20,
+      "backgroundImage": "https://via.placeholder.com/400x300?text=Your+Image+Here"
+    },
+    {
+      "id": "card-1783693473289-4",
+      "size": "square",
+      "x": 10,
+      "y": 0,
+      "backgroundImage": "https://via.placeholder.com/400x300?text=Your+Image+Here",
+      "text": "",
+      "subtitle": "Massage"
+    },
+    {
+      "id": "card-1783693473289-5",
+      "size": "square",
+      "x": 8,
+      "y": 4,
+      "backgroundStyle": "gradient",
+      "borderColor": "#fbbf24",
+      "backgroundColor": "#fbbf24",
+      "text": "4.9★",
+      "subtitle": "Rated",
+      "textColor": "#ffffff",
+      "textAlignment": "center",
+      "verticalAlignment": "center",
+      "fontSize": 28,
+      "gradient": {
+        "mode": "simple",
+        "warpShape": "simplexNoise",
+        "warpStrength": 0.9,
+        "warpScale": 420,
+        "noiseAmount": 0.12,
+        "seed": 866,
+        "colors": [
+          "#fb2323",
+          "#000000"
+        ]
+      }
+    },
+    {
+      "id": "card-1783693473289-6",
+      "size": "square",
+      "x": 10,
+      "y": 4,
+      "backgroundColor": "#34d399",
+      "text": "Eco",
+      "subtitle": "Friendly",
+      "textColor": "#1f2937",
+      "textAlignment": "center",
+      "verticalAlignment": "center",
+      "fontSize": 20
+    },
+    {
+      "id": "card-1783693473289-7",
+      "size": "square",
+      "x": 4,
+      "y": 2,
+      "backgroundImage": "https://via.placeholder.com/400x300?text=Your+Image+Here",
+      "text": ""
+    },
+    {
+      "id": "card-1783693473289-8",
+      "size": "square",
+      "x": 8,
+      "y": 2,
+      "backgroundStyle": "fill",
+      "backgroundColor": "#60a5fa",
+      "text": "Premium",
+      "subtitle": "Quality",
+      "textColor": "#ffffff",
+      "textAlignment": "center",
+      "verticalAlignment": "center",
+      "fontSize": 18
+    },
+    {
+      "id": "card-1783693473289-9",
+      "size": "square",
+      "x": 10,
+      "y": 2,
+      "backgroundStyle": "gradient",
+      "backgroundColor": "#a78bfa",
+      "text": "2K+",
+      "subtitle": "Reviews",
+      "textColor": "#000000",
+      "textAlignment": "center",
+      "verticalAlignment": "center",
+      "fontSize": 33,
+      "gradient": {
+        "mode": "sharpBezier",
+        "warpShape": "simplexNoise",
+        "warpStrength": 0.18,
+        "warpScale": 563,
+        "noiseAmount": 0.12,
+        "seed": 19803,
+        "colors": [
+          "#a78bfa",
+          "#ffffff"
+        ]
+      },
+      "titleTypography": {
+        "familyId": "erode",
+        "weight": 400,
+        "style": "normal"
+      }
+    },
+    {
+      "id": "card-1783693473289-10",
+      "size": "wide",
+      "x": 0,
+      "y": 4,
+      "backgroundStyle": "gradient",
+      "text": "Coffee",
+      "textColor": "#ffffff",
+      "textAlignment": "center",
+      "verticalAlignment": "center",
+      "fontSize": 42,
+      "gradient": {
+        "mode": "softBezier",
+        "warpShape": "domainWarping",
+        "warpStrength": 0.73,
+        "warpScale": 429,
+        "noiseAmount": 0.12,
+        "seed": 81420,
+        "colors": [
+          "#fba660",
+          "#b61aff"
+        ]
+      },
+      "titleTypography": {
+        "familyId": "supreme",
+        "weight": 800,
+        "style": "normal"
+      },
+      "backgroundImage": "https://via.placeholder.com/400x300?text=Your+Image+Here"
+    },
+    {
+      "id": "card-1783693473289-11",
+      "size": "wide",
+      "x": 4,
+      "y": 4,
+      "backgroundStyle": "gradient",
+      "text": "Limited Time Offer",
+      "textColor": "#000000",
+      "textAlignment": "center",
+      "verticalAlignment": "center",
+      "fontSize": 36,
+      "gradient": {
+        "mode": "meshStatic",
+        "warpShape": "smoothNoise",
+        "warpStrength": 0.5,
+        "warpScale": 420,
+        "noiseAmount": 0.12,
+        "seed": 77470,
+        "colors": [
+          "#ec4899",
+          "#fcfcfc"
+        ]
+      },
+      "titleTypography": {
+        "familyId": "satoshi",
+        "weight": 400,
+        "style": "normal"
+      },
+      "backgroundImage": "https://via.placeholder.com/400x300?text=Your+Image+Here"
+    }
+  ],
+  "createdAt": 1783693841573,
+  "updatedAt": 1783693841573,
+  "version": 2
+}
